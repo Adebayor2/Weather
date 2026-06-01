@@ -1,8 +1,4 @@
-
-const API_KEY = '794e5de359288029eade8a85968d967c'; // ← Paste your OpenWeatherMap API key here
-const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
-
-
+import { API_KEY, BASE_URL } from './config.js';
 const iconMap = {
   '01d': '☀️', '01n': '🌙',
   '02d': '🌤️', '02n': '🌤️',
