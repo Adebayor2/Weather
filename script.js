@@ -23,10 +23,14 @@ const elIcon = document.getElementById('weatherIcon');
 const elHumidity = document.getElementById('humidityVal');
 const elWind = document.getElementById('windVal');
 const elFeels = document.getElementById('feelsVal');
+const fetchBtn = document.getElementById('searchBtn');
 
 let errorTimeout;
 
-async function fetchWeather() {
+  fetchBtn.addEventListener('click', fetchWeather)  
+
+  async function fetchWeather() {
+    alert('fetchWeather function called');
   const city = cityInput.value.trim();
   if (!city) return;
 
@@ -39,6 +43,7 @@ async function fetchWeather() {
 
   try {
     const res = await fetch(url);
+    
 
     if (!res.ok) {
       card.classList.remove('loading', 'shimmer');
@@ -57,7 +62,7 @@ async function fetchWeather() {
     console.error('Error fetching weather:', err);
     showError('Network error. Please check your connection.');
   }
-}
+
 
 function showError(message) {
   errorPill.textContent = message;
@@ -90,7 +95,5 @@ function renderWeather(data) {
 cityInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') fetchWeather();
 });
-window.fetchWeather = fetchWeather; 
-window.showError = showError; 
-window.renderWeather = renderWeather; 
-window.iconMap = iconMap;
+
+}
