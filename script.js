@@ -1,4 +1,5 @@
 import { API_KEY, BASE_URL } from './config.js';
+
 const iconMap = {
   '01d': '☀️', '01n': '🌙',
   '02d': '🌤️', '02n': '🌤️',
@@ -89,3 +90,7 @@ function renderWeather(data) {
 cityInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') fetchWeather();
 });
+window.fetchWeather = fetchWeather; 
+window.showError = showError; 
+window.renderWeather = renderWeather; 
+window.iconMap = iconMap;
