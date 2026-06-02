@@ -30,7 +30,7 @@ let errorTimeout;
   fetchBtn.addEventListener('click', fetchWeather)  
 
   async function fetchWeather() {
-    alert('fetchWeather function called');
+    // alert('fetchWeather function called');
   const city = cityInput.value.trim();
   if (!city) return;
 
